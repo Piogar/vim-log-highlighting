@@ -66,6 +66,7 @@ syn match logIPV6       '\<\x\{1,4}\(:\x\{1,4}\)\{7}\>'
 syn match logMacAddress '\<\x\{2}\(:\x\{2}\)\{5}'
 syn match logFilePath   '\<\w:\\[^\n|,; ()'"\]{}]\+'
 syn match logFilePath   '[^a-zA-Z0-9"']\@<=\/\w[^\n|,; ()'"\]{}]\+'
+syn match cppFile 	'\[[a-zA-Z_]\+\.[a-zA-Z]\+\:\d\+\]$' contains=logNumber
 
 
 " Syslog Columns
@@ -125,6 +126,7 @@ hi def link logIPV4 Label
 hi def link logIPV6 ErrorMsg
 hi def link logMacAddress Label
 hi def link logFilePath Conditional
+hi def link cppFile Underlined
 
 hi def link logSysColumns Conditional
 hi def link logSysProcess Include
