@@ -96,10 +96,15 @@ syn keyword logLevelEmergency EMERGENCY EMERG
 syn keyword logLevelAlert ALERT
 syn keyword logLevelCritical CRITICAL CRIT FATAL
 syn keyword logLevelError ERROR ERR FAILURE SEVERE
+syn match logLevelError ': error :'
+syn match logBacktrace ':\w\+::backtrace '
 syn keyword logLevelWarning WARNING WARN
+syn match logLevelWarning ': warning :'
 syn keyword logLevelNotice NOTICE
 syn keyword logLevelInfo INFO
+syn match logLevelInfo ': info :'
 syn keyword logLevelDebug DEBUG FINE
+syn match logLevelDebug ': debug :'
 syn keyword logLevelTrace TRACE FINER FINEST
 
 
@@ -151,8 +156,10 @@ hi def link logLevelError ErrorMsg
 hi def link logLevelWarning WarningMsg
 hi def link logLevelNotice Character
 hi def link logLevelInfo Repeat
-hi def link logLevelDebug Debug
+hi def link logLevelDebug MoreMsg
 hi def link logLevelTrace Comment
+hi def link logBacktrace TabLineSel
+"hi logBacktrace guifg=#A9A9A9 guibg=#FFA500 ctermfg=8 ctermbg=214
 
 
 
@@ -160,4 +167,3 @@ let b:current_syntax = 'log'
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
-
